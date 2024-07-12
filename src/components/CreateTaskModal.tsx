@@ -14,7 +14,9 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
+import { Badge } from "./ui/badge";
 
+// Definición de tipos para la tarea y las propiedades del componente
 interface Task {
   id: string;
   title: string;
@@ -54,15 +56,15 @@ const TaskCard: React.FC<TaskCardProps> = ({
             <DropdownMenuItem
               onClick={() =>
                 onEditTask(task.id, {
-                  title: "New Title",
-                  description: "New Description",
+                  title: task.title,
+                  description: task.description,
                 })
               }
             >
-              <span>Edit</span>
+              <span>Editar</span>
             </DropdownMenuItem>
             <DropdownMenuItem onClick={() => onDeleteTask(task.id)}>
-              <span className="text-red-500">Delete</span>
+              <span className="text-red-500">Eliminar</span>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
@@ -74,7 +76,9 @@ const TaskCard: React.FC<TaskCardProps> = ({
         <div className="flex items-center gap-2">
           <span className="text-sm text-muted-foreground">username</span>
         </div>
-        <div className="flex items-center gap-2"></div>
+        <div className="flex items-center gap-2">
+          <Badge variant="outline">Tarea</Badge>
+        </div>
       </CardFooter>
     </Card>
   );

@@ -1,6 +1,7 @@
 import React from "react";
 import TaskCard from "./CreateTaskModal";
 
+// Definición de tipos para las tareas y las propiedades del componente
 interface Task {
   id: string;
   title: string;

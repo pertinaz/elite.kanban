@@ -32,9 +32,6 @@ function Page() {
   return (
     <main className="flex-1 p-8">
       <DashboardHeader />
-      {/* <Button variant="outline" onClick={() => setIsModalOpen(true)}>
-          + Add New Section
-        </Button> */}
       <Sections />
     </main>
   );
